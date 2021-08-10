@@ -8,4 +8,12 @@
  */
 var vaityjs = {
 	api_url: 'https://www.example.com',
+	api_service: function(request,data,method,callBack) {
+	  return $.ajax({
+	    method: method,
+	    url: this.api_url + "/" + request,
+	    data: data,
+	    success: callBack,
+	  });
+	},
 };
