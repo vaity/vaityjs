@@ -63,5 +63,10 @@ var vaityjs = {
 				$(element).css('pointer-events','auto');
 			},timeout);
 		}
-	}
+	},
+	ls_set: function(key,value) {
+		if(localStorage != undefined) {
+			localStorage.setItem(key,value);
+		}
+	},
 };
