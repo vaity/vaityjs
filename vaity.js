@@ -53,4 +53,15 @@ var vaityjs = {
 			$(element).css('pointer-events','none');
 		}
 	},
+	submitUnlock: function(element,timeout) {
+		if(timeout == undefined || timeout == '') {
+			timeout = 5000;
+		}
+		if($(element).length > 0) {
+			setTimeout(function(){
+				$(element).attr('disabled',false);
+				$(element).css('pointer-events','auto');
+			},timeout);
+		}
+	}
 };
