@@ -47,4 +47,10 @@ var vaityjs = {
 			}
 		}
 	},
+	submitLock: function(element) {
+		if($(element).length > 0) {
+			$(element).attr('disabled',true);
+			$(element).css('pointer-events','none');
+		}
+	},
 };
