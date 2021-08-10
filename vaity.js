@@ -14,6 +14,12 @@ var vaityjs = {
 	    url: this.api_url + "/" + request,
 	    data: data,
 	    success: callBack,
+	    complete: this.api_service_always
 	  });
+	},
+	api_service_always: function (response) {
+		if(response != undefined && response.responseJSON != undefined && response.responseJSON.status != undefined  && response.responseJSON.message != undefined && response.responseJSON.status == 'error' && response.responseJSON.message == 'Unauthorised Access') {
+			window.location = base_url;
+		}
 	},
 };
