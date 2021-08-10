@@ -6,4 +6,6 @@
  * https://jquery.com/download/
  *
  */
-var vaityjs = {};
+var vaityjs = {
+	api_url: 'https://www.example.com',
+};
