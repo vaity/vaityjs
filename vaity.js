@@ -22,4 +22,29 @@ var vaityjs = {
 			window.location = base_url;
 		}
 	},
+	setNotification: function (element,status,message,timeout) {
+		if(timeout == undefined || timeout == '') {
+			timeout = 5000;
+		}
+		if($(element).length > 0) {
+			if(message != undefined && message != '') {
+				var notification_class;
+				if(status != undefined && status == 'success') {
+					notification_class = 'alert alert-success';
+				} else {
+					notification_class = 'alert alert-danger';
+				}
+				$(element).removeClass('alert').removeClass('alert-danger').removeClass('alert-success');
+				$(element).addClass(notification_class);
+				$(element).html(message);
+				$(element).slideDown(300);
+				$([document.documentElement, document.body]).animate({
+					scrollTop: $(element).offset().top - 100
+				}, 500);
+				setTimeout(function(){
+					$(element).slideUp(300);
+				},timeout);
+			}
+		}
+	},
 };
