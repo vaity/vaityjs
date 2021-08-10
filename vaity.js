@@ -69,4 +69,10 @@ var vaityjs = {
 			localStorage.setItem(key,value);
 		}
 	},
+	ls_get:function(key) {
+		if(localStorage != undefined) {
+			return localStorage.getItem(key);
+		}
+		return false;
+	},
 };
