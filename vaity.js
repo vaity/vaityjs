@@ -7,7 +7,8 @@
  *
  */
 var vaityjs = {
-	api_url: 'https://www.example.com',
+	base_url: 'https://www.example.com',
+	api_url: 'https://www.example.com/api',
 	api_service: function(request,data,method,callBack) {
 	  return $.ajax({
 	    method: method,
@@ -19,7 +20,7 @@ var vaityjs = {
 	},
 	api_service_always: function (response) {
 		if(response != undefined && response.responseJSON != undefined && response.responseJSON.status != undefined  && response.responseJSON.message != undefined && response.responseJSON.status == 'error' && response.responseJSON.message == 'Unauthorised Access') {
-			window.location = base_url;
+			window.location = this.base_url;
 		}
 	},
 	setNotification: function (element,status,message,timeout) {
