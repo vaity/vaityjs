@@ -39,13 +39,29 @@ var vaityjs = {
 				$(element).addClass(notification_class);
 				$(element).html(message);
 				$(element).slideDown(300);
-				$([document.documentElement, document.body]).animate({
-					scrollTop: $(element).offset().top - 100
-				}, 500);
+				this.scrollTop(element);
 				setTimeout(function(){
 					$(element).slideUp(300);
 				},timeout);
 			}
+		}
+	},
+	animate: function(element,properties,timeout) {
+		if($(element).length > 0) {
+			properties = properties || {};
+			if(properties != undefined && typeof(properties) == 'object') {
+				if(timeout == undefined || timeout == '') {
+					timeout = 500;
+				}
+				$(element).animate(properties,timeout);
+			}
+		}
+	},
+	scrollTop: function(element) {
+		if($(element).length > 0) {
+			$([document.documentElement, document.body]).animate({
+				scrollTop: $(element).offset().top - 100
+			}, 500);
 		}
 	},
 	submitLock: function(element) {
