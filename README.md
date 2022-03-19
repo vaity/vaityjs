@@ -4,6 +4,13 @@
 * [jQuery](https://jquery.com/download/)
 * [Bootstrap](https://getbootstrap.com/)
 
+
+## Latest Version
+1.0
+
+## CDN URL
+[https://cdn.jsdelivr.net/gh/vaity/vaityjs@v1.0/dist/vaity.min.js](https://cdn.jsdelivr.net/gh/vaity/vaityjs@v1.0/dist/vaity.min.js)
+
 ## Development
 ### Clone Repository
 
